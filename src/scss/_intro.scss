@@ -1,0 +1,240 @@
+.intro {
+  @include blockWrapper;
+  margin-bottom: 12.8rem;
+  position: relative;
+  z-index: 3;
+  padding-top: 9.8rem;
+
+  @include breakpoint(desktop) {
+    margin-bottom: 9.6rem;
+  }
+
+  &::before {
+    content: "";
+    width: 150rem;
+    height: 150rem;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    right: 0;
+    top: 0;
+    background-image: url("../images/red-blurred-circle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%) translateX(50%) scale(1.5);
+
+    @include breakpoint(tablet) {
+      transform: translateY(-50%) translateX(50%) scale(1);
+      z-index: 2;
+    }
+  }
+}
+
+.intro__content {
+  @include blockContent;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 280rem;
+    height: 280rem;
+    background-image: url("../images/intro-circle.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    pointer-events: none;
+    right: 0;
+    top: 0;
+    margin-top: -70rem;
+    margin-right: -115rem;
+    opacity: 0.3;
+
+    @include breakpoint(desktop) {
+      width: 209rem;
+      height: 209rem;
+      margin-right: -90rem;
+      margin-top: -40rem;
+    }
+
+    @include breakpoint(laptop) {
+      margin-top: -35rem;
+    }
+
+    @include breakpoint(tablet) {
+    }
+  }
+}
+
+.intro__text-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 75.5rem;
+  flex-grow: 1;
+
+  @include breakpoint(tablet) {
+    max-width: none;
+    position: relative;
+    z-index: 6;
+  }
+}
+
+.intro__wrapper {
+  border-radius: 3.2rem;
+  padding: 6.4rem;
+  background: #17181b;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../images/intro-pattern.svg");
+  background-size: 10rem 10rem;
+  background-position: center;
+  background-repeat: repeat;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 68rem;
+
+  @include breakpoint(laptop) {
+    padding: 5.6rem;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 4rem;
+    z-index: initial;
+  }
+
+  @include breakpoint(small-tablet) {
+    padding: 3.2rem;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 280rem;
+    height: 280rem;
+    background-image: url("../images/intro-circle.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    pointer-events: none;
+    right: 0;
+    top: 0;
+    margin-top: -70rem;
+    margin-right: -115rem;
+
+    @include breakpoint(desktop) {
+      width: 209rem;
+      height: 209rem;
+      margin-right: -90rem;
+      margin-top: -40rem;
+    }
+
+    @include breakpoint(laptop) {
+      margin-top: -35rem;
+    }
+
+    @include breakpoint(tablet) {
+      margin-right: -100rem;
+      z-index: 2;
+    }
+  }
+}
+
+.intro__image {
+  position: absolute;
+  width: 120rem;
+  height: 120rem;
+  object-fit: contain;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  pointer-events: none;
+  margin-top: 6rem;
+  margin-right: -17rem;
+
+  @include breakpoint(desktop) {
+    width: 75.6rem;
+    height: 75.6rem;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    transform: none;
+    margin-right: -10rem;
+    margin-bottom: -20rem;
+  }
+
+  @include breakpoint(laptop) {
+    width: 68.4rem;
+    height: 68.4rem;
+    margin-right: -10rem;
+    margin-bottom: -18rem;
+  }
+
+  @include breakpoint(tablet) {
+    width: 60rem;
+    height: 60rem;
+    margin-bottom: -16rem;
+    z-index: 3;
+  }
+
+  @include breakpoint(small-tablet) {
+    margin-bottom: -17rem;
+  }
+}
+
+.intro__heading {
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 5.6rem;
+  margin-bottom: 3.2rem;
+  b {
+    font-weight: inherit;
+    color: #d2ab49;
+  }
+
+  @include breakpoint(laptop) {
+    margin-bottom: 2.4rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 4.8rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+.intro__heading-text {
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.2rem;
+  margin-bottom: 9.6rem;
+
+  color: rgba(255, 255, 255, 0.64);
+
+  b {
+    font-weight: inherit;
+    color: rgba(210, 171, 73, 0.64);
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+  }
+}
+
+.intro__link {
+  @include breakpoint(tablet) {
+    margin-top: auto;
+  }
+}

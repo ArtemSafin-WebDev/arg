@@ -1,0 +1,454 @@
+.page-footer {
+  @include blockWrapper;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 108.4rem;
+    height: 147.8rem;
+    margin-left: -6.2rem;
+    background-image: url("../images/footer-decor.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include breakpoint(desktop) {
+      margin-left: -20rem;
+    }
+
+    @include breakpoint(small-tablet) {
+      margin-left: -30rem;
+    }
+  }
+}
+
+.page-footer__content {
+  @include blockContent;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  position: relative;
+  z-index: 18;
+  grid-gap: 2.4rem;
+
+  @include breakpoint(small-tablet) {
+    grid-gap: 1.6rem;
+  }
+}
+
+.page-footer__left-col {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10.2rem;
+  position: relative;
+  z-index: 1;
+  max-width: 57rem;
+
+  @include breakpoint(desktop) {
+    max-width: 47rem;
+  }
+
+  @include breakpoint(tablet) {
+    max-width: 38rem;
+    padding-bottom: 5.3rem;
+  }
+}
+
+.page-footer__right-col {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &::before {
+    content: "";
+    left: 50%;
+    transform: translateX(-50%) translateY(50%) scale(1.5);
+    bottom: 0;
+    width: 150rem;
+    height: 150rem;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url("../images/blue-blurred-circle.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+
+    @include breakpoint(tablet) {
+      transform: translateX(-50%) translateY(50%) scale(1);
+    }
+  }
+}
+
+.page-footer__news {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.page-footer__news-heading {
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4rem;
+  margin-bottom: 2.4rem;
+  white-space: nowrap;
+
+  @include breakpoint(desktop) {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2rem;
+    margin-bottom: 2.4rem;
+    white-space: normal;
+    padding-right: 3rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
+.page-footer__news-wrapper {
+  position: relative;
+  margin-bottom: 4.8rem;
+  z-index: 1;
+
+  @include breakpoint(small-tablet) {
+    margin-bottom: 3.2rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 33.6rem;
+    height: 20.2rem;
+    background-image: url("../images/footer-circle-decor.svg");
+    z-index: -1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    left: 100%;
+    bottom: 100%;
+    margin-left: -17rem;
+    margin-bottom: -7.4rem;
+
+    @include breakpoint(desktop) {
+      margin-bottom: -5.5rem;
+      margin-left: -17rem;
+    }
+
+    @include breakpoint(small-tablet) {
+      margin-left: -26rem;
+    }
+  }
+}
+
+.page-footer__news-video {
+  display: block;
+  border-radius: 3.2rem;
+  overflow: hidden;
+  position: relative;
+
+  @include breakpoint(small-tablet) {
+    max-width: 25.4rem;
+    border-radius: 2.4rem;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+  }
+}
+
+.page-footer__news-video-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-footer__news-video-play {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 9.6rem;
+  height: 9.6rem;
+  border-radius: 50%;
+  backdrop-filter: blur(1.6rem);
+  display: grid;
+  place-items: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  position: absolute;
+  z-index: 15;
+
+  svg {
+    width: 5.6rem;
+    height: 5.6rem;
+    fill: white;
+  }
+
+  @include breakpoint(tablet) {
+    width: 6.4rem;
+    height: 6.4rem;
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}
+
+.page-footer__news-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  grid-gap: 2rem;
+  grid-row-gap: 1.2rem;
+  margin-bottom: 6.4rem;
+
+  @include breakpoint(small-tablet) {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+}
+
+.page-footer__news-list-item {
+  justify-self: flex-start;
+
+  @include breakpoint(small-tablet) {
+    &:nth-child(even) {
+      order: 10;
+    }
+  }
+}
+
+.page-footer__news-link {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 10rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(1.6rem);
+  gap: 1.2rem;
+  padding-right: 1.6rem;
+}
+
+.page-footer__news-link-logo {
+  flex-shrink: 0;
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: contain;
+}
+
+.page-footer__skolkovo {
+  align-self: flex-start;
+}
+
+.page-footer__skolkovo-image {
+  width: 16.4rem;
+  display: block;
+  height: auto;
+  align-self: flex-start;
+}
+
+.page-footer__contacts {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6.4rem;
+}
+
+.page-footer__address {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.8rem;
+}
+
+.page-footer__schedule {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem;
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.page-footer__on-map {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2rem;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 0.8rem 1.2rem;
+  gap: 0.4rem;
+  color: white;
+  margin-top: 1.2rem;
+  border-radius: 2.4rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(1.6rem);
+  align-self: flex-start;
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  svg {
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: currentColor;
+  }
+}
+
+.page-footer__links {
+  margin-top: 3.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 1.2rem;
+  max-width: 72rem;
+
+  @include breakpoint(desktop) {
+    max-width: 50rem;
+  }
+
+  @include breakpoint(tablet) {
+    max-width: 38rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
+.page-footer__callback-link {
+  text-align: center;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.4rem;
+  padding: 1.2rem 2.4rem;
+  border-radius: 4rem;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: white;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  &:link,
+  &:visited {
+    color: white;
+  }
+}
+
+.page-footer__phone-link {
+  text-align: center;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.4rem;
+  padding: 1.2rem 2.4rem;
+  border-radius: 4rem;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  gap: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  svg {
+    fill: currentColor;
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+.page-footer__apps {
+  margin-bottom: 6.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  @include breakpoint(desktop) {
+    margin-bottom: 3.2rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    margin-top: auto;
+  }
+}
+
+.page-footer__apps-heading {
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4rem;
+
+  @include breakpoint(desktop) {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2rem;
+  }
+}
+
+.page-footer__apps-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.page-footer__apps-list-item {
+  flex-shrink: 0;
+}
+
+.page-footer__apps-link {
+  display: block;
+}
+
+.page-footer__apps-link-image {
+  display: block;
+  height: 4rem;
+}
+
+.page-footer__illustration {
+  margin-top: auto;
+  width: 57rem;
+  height: auto;
+
+  @include breakpoint(desktop) {
+    width: 47.3rem;
+  }
+
+  @include breakpoint(tablet) {
+    width: 38rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    margin: 0;
+  }
+}

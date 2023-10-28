@@ -1,0 +1,28 @@
+:root {
+  --primary-color: #741239;
+  --text-color: white;
+
+  --content-padding: 8rem;
+  --container-width: 176rem;
+  --montserrat: "Montserrat", sans-serif;
+
+  @include breakpoint(desktop) {
+    --content-padding: 6.4rem;
+  }
+
+  @include breakpoint(laptop) {
+    --content-padding: 5.6rem;
+  }
+
+  @include breakpoint(tablet) {
+    --content-padding: 4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    --content-padding: 3.2rem;
+  }
+
+  @include breakpoint(mobile) {
+    --content-padding: 1.6rem;
+  }
+}

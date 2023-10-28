@@ -1,0 +1,505 @@
+.services {
+  @include blockWrapper;
+  margin-bottom: 12.8rem;
+  position: relative;
+  z-index: 3;
+
+  @include breakpoint(desktop) {
+    margin-bottom: 9.6rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 150rem;
+    height: 150rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../images/blue-blurred-circle.svg");
+    transform: translateX(50%) scale(1.5);
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+.services__content {
+  @include blockContent;
+}
+
+.services__grid {
+  grid-gap: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  @include breakpoint(small-tablet) {
+    grid-gap: 1.6rem;
+  }
+}
+
+.services__help {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3.2rem;
+  background: linear-gradient(90deg, #fbed96 0%, #abecd6 100%);
+  overflow: hidden;
+  padding: 6.4rem;
+  color: #0f1014;
+  grid-column: span 7;
+  min-height: 72rem;
+
+  @include breakpoint(desktop) {
+    padding: 5.6rem;
+    min-height: 75rem;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 4rem;
+    min-height: 54.4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    padding: 3.2rem;
+    min-height: 48rem;
+  }
+}
+
+.services__help-heading {
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 5.6rem;
+  margin-bottom: 4rem;
+
+  @include breakpoint(desktop) {
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 4.8rem;
+    margin-bottom: 3.2rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.services__help-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.services__help-list-item {
+  flex-shrink: 1;
+  max-width: 100%;
+
+  @include breakpoint(small-tablet) {
+  }
+}
+
+.services__help-card {
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 3.2rem;
+  padding: 1.6rem 2.4rem;
+  border-radius: 3.2rem;
+  border: 1px solid rgba(15, 16, 20, 0.32);
+  white-space: nowrap;
+  @include breakpoint(desktop) {
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    padding: 1rem 1.6rem;
+    border-radius: 3.2rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    padding: 1rem 1rem;
+  }
+}
+
+.services__help-link {
+  margin-top: auto;
+
+  @include breakpoint(desktop) {
+    align-self: stretch;
+  }
+}
+
+.services__app {
+  grid-column: span 5;
+  border-radius: 3.2rem;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  min-height: 72rem;
+  background: radial-gradient(
+    350.67% 141.42% at 100% 100%,
+    #0d171e 0%,
+    #233844 58.8%,
+    #3a6073 100%
+  );
+  overflow: hidden;
+  color: white;
+  padding: 6.4rem;
+  border-radius: 3.2rem;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint(desktop) {
+    padding: 5.6rem;
+    min-height: 75rem;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 4rem;
+    min-height: 54.4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    padding: 3.2rem;
+    min-height: 48rem;
+  }
+}
+
+.servies__app-image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  user-select: none;
+  -webkit-user-drag: none;
+
+  @include breakpoint(tablet) {
+    bottom: -2rem;
+  }
+}
+
+.services__app-heading {
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 5.6rem;
+  margin-bottom: 2.4rem;
+
+  @include breakpoint(desktop) {
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 4.8rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.services__app-text {
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.2rem;
+  color: rgba(255, 255, 255, 0.64);
+  margin-bottom: 2.4rem;
+
+  @include breakpoint(desktop) {
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.2rem;
+    margin-bottom: 3rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.services__app-link {
+  margin-top: auto;
+
+  @include breakpoint(desktop) {
+    align-self: stretch;
+  }
+}
+
+.services__checkup {
+  display: flex;
+  flex-direction: column;
+  padding: 6.4rem;
+  border-radius: 3.2rem;
+  background-color: lightgray;
+  background-image: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  justify-content: flex-end;
+  grid-column: span 5;
+  color: #0f1014;
+  min-height: 72rem;
+
+  @include breakpoint(desktop) {
+    padding: 5.6rem;
+    min-height: 75rem;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 4rem;
+    min-height: 54.4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    padding: 3.2rem;
+    min-height: 48rem;
+  }
+}
+
+.services__checkup-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: left top;
+  z-index: -1;
+  -webkit-user-drag: none;
+  user-select: none;
+
+  @include breakpoint(tablet) {
+    margin-top: -5rem;
+  }
+}
+
+.services__checkup-heading {
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 5.6rem;
+  margin-bottom: 2.4rem;
+
+  @include breakpoint(desktop) {
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 4.8rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.services__checkup-text {
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.2rem;
+  color: rgba(15, 16, 20, 0.64);
+  margin-bottom: 6.4rem;
+
+  @include breakpoint(desktop) {
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.2rem;
+    margin-bottom: 5.6rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+    margin-bottom: 4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem;
+    margin-bottom: 3.2rem;
+  }
+}
+
+.services__checkup-link {
+  @include breakpoint(desktop) {
+    align-self: stretch;
+  }
+}
+
+.services__registration {
+  padding: 6.4rem;
+  border-radius: 3.2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  min-height: 72rem;
+  grid-column: span 7;
+
+  @include breakpoint(desktop) {
+    padding: 5.6rem;
+    min-height: 75rem;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 4rem;
+    min-height: 54.4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    padding: 3.2rem;
+    min-height: 48rem;
+  }
+}
+
+.services__registration-heading {
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 5.6rem;
+  margin-bottom: 2.4rem;
+
+  @include breakpoint(desktop) {
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 4.8rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.services__registration-text {
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.2rem;
+  margin-bottom: 2.4rem;
+  color: rgba(255, 255, 255, 0.64);
+
+  @include breakpoint(desktop) {
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.2rem;
+    margin-bottom: 3rem;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem;
+    margin-bottom: 4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.services__registration-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.services__registration-link {
+  margin-top: auto;
+
+  @include breakpoint(desktop) {
+    align-self: stretch;
+  }
+}
