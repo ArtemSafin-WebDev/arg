@@ -11,9 +11,20 @@
   flex-shrink: 0;
   color: white;
   text-align: center;
+  transition: background-color 0.2s, color 0.2s;
   &:link,
   &:visited {
     color: white;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--primary-color-hover);
+    }
+  }
+
+  &:active {
+    background-color: var(--primary-color-active);
   }
 
   @include breakpoint(small-tablet) {

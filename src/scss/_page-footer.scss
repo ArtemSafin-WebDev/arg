@@ -24,6 +24,14 @@
     @include breakpoint(small-tablet) {
       margin-left: -30rem;
     }
+
+    @include breakpoint(mobile) {
+      left: 50%;
+      margin: 0;
+      transform: translateX(-50%);
+      bottom: 0;
+      z-index: 1;
+    }
   }
 }
 
@@ -37,6 +45,12 @@
 
   @include breakpoint(small-tablet) {
     grid-gap: 1.6rem;
+  }
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 6.4rem;
   }
 }
 
@@ -55,6 +69,11 @@
   @include breakpoint(tablet) {
     max-width: 38rem;
     padding-bottom: 5.3rem;
+  }
+
+  @include breakpoint(mobile) {
+    max-width: none;
+    padding: 0;
   }
 }
 
@@ -116,6 +135,10 @@
     line-height: 3.2rem;
     margin-bottom: 1.6rem;
   }
+
+  @include breakpoint(mobile) {
+    margin-bottom: 1.6rem;
+  }
 }
 
 .page-footer__news-wrapper {
@@ -151,6 +174,10 @@
     @include breakpoint(small-tablet) {
       margin-left: -26rem;
     }
+
+    @include breakpoint(mobile) {
+      margin-left: -20rem;
+    }
   }
 }
 
@@ -163,6 +190,10 @@
   @include breakpoint(small-tablet) {
     max-width: 25.4rem;
     border-radius: 2.4rem;
+  }
+
+  @include breakpoint(mobile) {
+    max-width: none;
   }
 
   &::before {
@@ -225,6 +256,10 @@
     gap: 1.2rem;
     align-items: flex-start;
   }
+
+  @include breakpoint(mobile) {
+    align-items: stretch;
+  }
 }
 
 .page-footer__news-list-item {
@@ -246,6 +281,21 @@
   backdrop-filter: blur(1.6rem);
   gap: 1.2rem;
   padding-right: 1.6rem;
+  transition: background-color 0.2s;
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgba(15, 16, 20, 0.32);
+    }
+  }
+
+  &:active {
+    background: rgba(15, 16, 20, 0.32);
+  }
+  @include breakpoint(mobile) {
+    padding: 0.8rem 1.6rem;
+    justify-content: center;
+  }
 }
 
 .page-footer__news-link-logo {
@@ -257,6 +307,10 @@
 
 .page-footer__skolkovo {
   align-self: flex-start;
+
+  @include breakpoint(mobile) {
+    align-self: center;
+  }
 }
 
 .page-footer__skolkovo-image {
@@ -277,6 +331,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: 2.8rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem;
+  }
 }
 
 .page-footer__schedule {
@@ -286,6 +347,13 @@
   line-height: 2.4rem;
   margin-top: 0.4rem;
   color: rgba(255, 255, 255, 0.64);
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+  }
 }
 
 .page-footer__on-map {
@@ -304,9 +372,20 @@
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(1.6rem);
   align-self: flex-start;
+  transition: background-color 0.2s;
   &:link,
   &:visited {
     color: white;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgba(15, 16, 20, 0.32);
+    }
+  }
+
+  &:active {
+    background: rgba(15, 16, 20, 0.32);
   }
 
   svg {
@@ -334,6 +413,10 @@
     flex-direction: column;
     gap: 1.2rem;
   }
+
+  @include breakpoint(mobile) {
+    max-width: none;
+  }
 }
 
 .page-footer__callback-link {
@@ -352,6 +435,15 @@
   &:link,
   &:visited {
     color: white;
+  }
+  @media (hover: hover) {
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  &:active {
+    background: rgba(255, 255, 255, 0.08);
   }
 }
 
@@ -378,6 +470,18 @@
     color: white;
   }
 
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--primary-color-hover);
+      border-color: var(--primary-color-hover);
+    }
+  }
+
+  &:active {
+    background-color: var(--primary-color-active);
+    border-color: var(--primary-color-active);
+  }
+
   svg {
     fill: currentColor;
     flex-shrink: 0;
@@ -398,6 +502,11 @@
 
   @include breakpoint(small-tablet) {
     margin-top: auto;
+  }
+
+  @include breakpoint(mobile) {
+    margin: 0;
+    margin-bottom: 3.2rem;
   }
 }
 
@@ -450,5 +559,8 @@
 
   @include breakpoint(small-tablet) {
     margin: 0;
+  }
+  @include breakpoint(mobile) {
+    width: 100%;
   }
 }

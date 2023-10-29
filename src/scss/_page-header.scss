@@ -19,6 +19,10 @@
   @include breakpoint(tablet) {
     gap: 1.2rem;
   }
+
+  @include breakpoint(mobile) {
+    height: 8rem;
+  }
 }
 
 .page-header__logo {
@@ -33,6 +37,10 @@
   display: block;
   width: 16.6rem;
   height: auto;
+
+  @include breakpoint(mobile) {
+    width: 3.7rem;
+  }
 }
 
 .page-header__menu {
@@ -59,11 +67,11 @@
     transition: opacity 0.4s, visibility 0s linear 0.4s;
     overscroll-behavior-y: contain;
     overflow-y: auto;
-    background-image: url("../images/menu-blue-blur.svg"),
-      url("../images/menu-red-blur.svg");
-    background-repeat: no-repeat, no-repeat;
-    background-position: left bottom, right top;
-    background-size: 70rem auto, 70rem auto;
+    // background-image: url("../images/menu-blue-blur.svg"),
+    //   url("../images/menu-red-blur.svg");
+    // background-repeat: no-repeat, no-repeat;
+    // background-position: left bottom, right top;
+    // background-size: 70rem auto, 70rem auto;
 
     @include blockWrapper;
 
@@ -88,6 +96,10 @@
     margin-bottom: 3.2rem;
     height: 9.6rem;
   }
+
+  @include breakpoint(mobile) {
+    height: 8rem;
+  }
 }
 
 .page-header__menu-inner {
@@ -96,6 +108,39 @@
     @include blockContent;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: calc((100vw - 100%) / 2 * -1);
+      top: 0;
+      z-index: -1;
+      width: 70rem;
+      height: 70rem;
+      background-image: url("../images/menu-red-blur.svg");
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: calc((100vw - 100%) / 2 * -1);
+      bottom: 0;
+      z-index: -1;
+      width: 70rem;
+      height: 70rem;
+      background-image: url("../images/menu-blue-blur.svg");
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size: contain;
+      pointer-events: none;
+    }
   }
 }
 
@@ -209,6 +254,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s, visibility 0s linear 0.4s;
+    pointer-events: none;
   }
 
   @include breakpoint(tablet) {
@@ -228,6 +274,7 @@
     color: #0f1014;
     max-width: 83.2rem;
     margin: 0 auto;
+    pointer-events: all;
   }
 }
 
@@ -240,12 +287,22 @@
     padding-top: 2.4rem;
     padding-bottom: 3.2rem;
   }
+
+  @include breakpoint(mobile) {
+    gap: 2.4rem;
+    padding-top: 2.4rem;
+  }
 }
 
 .page-header__nav-services-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-gap: 0.8rem;
+
+  @include breakpoint(mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 0.8rem;
+  }
 }
 
 .page-header__nav-services-list-item {
@@ -261,6 +318,12 @@
   background: #f5f5f6;
   padding: 1.2rem;
   gap: 0.8rem;
+
+  @media (hover: hover) {
+    &:hover {
+      color: #d2ab49;
+    }
+  }
 
   @include breakpoint(tablet) {
     background-color: #1c1c1f;
@@ -285,6 +348,10 @@
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+
+  @include breakpoint(mobile) {
+    display: contents;
+  }
 }
 
 .page-header__nav-submenu-link {
@@ -310,6 +377,12 @@
   @include breakpoint(tablet) {
     grid-gap: 0.8rem;
   }
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
 }
 
 .page-header__phone-link {
@@ -324,12 +397,26 @@
   line-height: 2.4rem;
   display: flex;
   align-items: center;
-
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
   svg {
     width: 2.4rem;
     height: 2.4rem;
     fill: white;
     transition: fill 0.2s;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  &:active {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  @include breakpoint(mobile) {
+    display: none;
   }
 }
 
@@ -398,6 +485,14 @@
       height: 1px;
       top: 0;
     }
+  }
+
+  @include breakpoint(mobile) {
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
   }
 }
 

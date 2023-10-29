@@ -7,6 +7,9 @@
   @include breakpoint(desktop) {
     margin-bottom: 9.6rem;
   }
+  @include breakpoint(mobile) {
+    margin-bottom: 6.4rem;
+  }
 
   &::before {
     content: "";
@@ -22,6 +25,16 @@
     transform: translateX(50%) scale(1.5);
     z-index: -1;
     pointer-events: none;
+
+    @include breakpoint(mobile) {
+      transform: scale(2);
+      width: 76rem;
+      height: 76rem;
+      top: auto;
+      bottom: -7.4rem;
+      right: auto;
+      left: -7.4rem;
+    }
   }
 }
 
@@ -33,9 +46,16 @@
   grid-gap: 2.4rem;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-areas: "help help help help help help help app app app app app" "checkup checkup checkup checkup checkup registration registration registration registration registration registration registration";
 
   @include breakpoint(small-tablet) {
     grid-gap: 1.6rem;
+  }
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
   }
 }
 
@@ -47,7 +67,7 @@
   overflow: hidden;
   padding: 6.4rem;
   color: #0f1014;
-  grid-column: span 7;
+  grid-area: help;
   min-height: 72rem;
 
   @include breakpoint(desktop) {
@@ -63,6 +83,12 @@
   @include breakpoint(small-tablet) {
     padding: 3.2rem;
     min-height: 48rem;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 1.6rem;
+    border-radius: 3.2rem;
+    min-height: auto;
   }
 }
 
@@ -96,6 +122,24 @@
     line-height: 3.2rem;
     margin-bottom: 2.4rem;
   }
+
+  @include breakpoint(mobile) {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.services__help-list-wrapper {
+  margin-bottom: 3rem;
+
+  @include breakpoint(mobile) {
+    margin: 0 -1.6rem;
+    padding: 0 1.6rem;
+    margin-bottom: 3.2rem;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    @include noScrollbar;
+  }
 }
 
 .services__help-list {
@@ -103,15 +147,16 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-bottom: 3rem;
+
+  @include breakpoint(mobile) {
+    width: max-content;
+    max-width: 85rem;
+  }
 }
 
 .services__help-list-item {
   flex-shrink: 1;
   max-width: 100%;
-
-  @include breakpoint(small-tablet) {
-  }
 }
 
 .services__help-card {
@@ -123,13 +168,24 @@
   border-radius: 3.2rem;
   border: 1px solid rgba(15, 16, 20, 0.32);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  display: block;
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba(15, 16, 20, 0.08);
+    }
+  }
+
+  &:active {
+    background-color: rgba(15, 16, 20, 0.08);
+  }
   @include breakpoint(desktop) {
     font-size: 2.2rem;
     font-style: normal;
     font-weight: 500;
     line-height: 3.2rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   @include breakpoint(tablet) {
@@ -137,12 +193,16 @@
     font-style: normal;
     font-weight: 500;
     line-height: 2rem;
-    padding: 1rem 1.6rem;
+    padding: 0.9rem 1.6rem;
     border-radius: 3.2rem;
   }
 
   @include breakpoint(small-tablet) {
-    padding: 1rem 1rem;
+    padding: 0.9rem 1rem;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 1rem 1.6rem;
   }
 }
 
@@ -155,18 +215,19 @@
 }
 
 .services__app {
-  grid-column: span 5;
+  grid-area: app;
   border-radius: 3.2rem;
   background-color: lightgray;
   display: flex;
   flex-direction: column;
   min-height: 72rem;
   background: radial-gradient(
-    350.67% 141.42% at 100% 100%,
-    #0d171e 0%,
+    250% 141.42% at 100% 100%,
+    #1e0d10 0%,
     #233844 58.8%,
-    #3a6073 100%
+    #3a6073 80%
   );
+
   overflow: hidden;
   color: white;
   padding: 6.4rem;
@@ -188,20 +249,49 @@
     padding: 3.2rem;
     min-height: 48rem;
   }
+
+  @include breakpoint(mobile) {
+    min-height: 42.8rem;
+    padding: 1.6rem;
+    background: radial-gradient(
+      350.67% 141.42% at 100% 100%,
+      #0d171e 0%,
+      #233844 58.8%,
+      #3a6073 100%
+    );
+  }
 }
 
 .servies__app-image {
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
-  width: 100%;
+  width: 72rem;
   height: auto;
   z-index: -1;
   user-select: none;
   -webkit-user-drag: none;
+  bottom: -9rem;
+  max-width: none;
 
+  @include breakpoint(desktop) {
+    width: 80rem;
+    bottom: -14rem;
+  }
   @include breakpoint(tablet) {
-    bottom: -2rem;
+    width: 58rem;
+    bottom: -12rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    width: 50rem;
+    bottom: -9rem;
+  }
+
+  @include breakpoint(mobile) {
+    bottom: -5rem;
+    width: 45rem;
   }
 }
 
@@ -233,7 +323,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: 3.2rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  @include breakpoint(mobile) {
+    margin-bottom: 0.8rem;
   }
 }
 
@@ -267,6 +361,13 @@
     line-height: 2.4rem;
     margin-bottom: 2.4rem;
   }
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+  }
 }
 
 .services__app-link {
@@ -282,13 +383,14 @@
   flex-direction: column;
   padding: 6.4rem;
   border-radius: 3.2rem;
-  background-color: lightgray;
+
   background-image: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%);
+
   overflow: hidden;
   position: relative;
   z-index: 1;
   justify-content: flex-end;
-  grid-column: span 5;
+  grid-area: checkup;
   color: #0f1014;
   min-height: 72rem;
 
@@ -306,20 +408,46 @@
     padding: 3.2rem;
     min-height: 48rem;
   }
+
+  @include breakpoint(mobile) {
+    padding: 1.6rem;
+    min-height: 43rem;
+  }
 }
 
 .services__checkup-image {
   position: absolute;
   left: 0;
   top: 0;
-  object-fit: cover;
-  object-position: left top;
+  object-fit: contain;
   z-index: -1;
   -webkit-user-drag: none;
   user-select: none;
 
+  width: 66rem;
+  height: 66rem;
+  margin-left: -26rem;
+  margin-top: -33rem;
+  max-width: none;
   @include breakpoint(tablet) {
-    margin-top: -5rem;
+    width: 55rem;
+    height: 55rem;
+    margin-top: -34rem;
+    margin-left: -20rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    margin-top: -29rem;
+    margin-left: -18rem;
+    width: 47rem;
+    height: 47rem;
+  }
+
+  @include breakpoint(mobile) {
+    margin-left: -16rem;
+    width: 42rem;
+    height: 42rem;
+    margin-top: -23rem;
   }
 }
 
@@ -351,7 +479,11 @@
     font-style: normal;
     font-weight: 700;
     line-height: 3.2rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  @include breakpoint(mobile) {
+    margin-bottom: 0.8rem;
   }
 }
 
@@ -386,6 +518,14 @@
     line-height: 2.4rem;
     margin-bottom: 3.2rem;
   }
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+    margin-bottom: 3.2rem;
+  }
 }
 
 .services__checkup-link {
@@ -403,7 +543,7 @@
   position: relative;
   z-index: 1;
   min-height: 72rem;
-  grid-column: span 7;
+  grid-area: registration;
 
   @include breakpoint(desktop) {
     padding: 5.6rem;
@@ -418,6 +558,12 @@
   @include breakpoint(small-tablet) {
     padding: 3.2rem;
     min-height: 48rem;
+  }
+
+  @include breakpoint(mobile) {
+    min-height: auto;
+    padding: 1.6rem;
+    min-height: 33rem;
   }
 }
 
@@ -449,7 +595,15 @@
     font-style: normal;
     font-weight: 700;
     line-height: 3.2rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.2rem;
+    margin-bottom: 0.8rem;
   }
 }
 
@@ -483,6 +637,13 @@
     font-weight: 400;
     line-height: 2.4rem;
     margin-bottom: 2.4rem;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
   }
 }
 
