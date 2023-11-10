@@ -1,0 +1,54 @@
+<div class="modal js-modal" id="callback-modal">
+    <div class="modal__inner">
+        <button class="modal__close">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <h3 class="modal__heading">
+            Заказать консультацию
+        </h3>
+        <form action="/" method="POST" class="modal__form">
+            <div class="modal__fields">
+                <div class="modal__field">
+                    <div class="modal__input-wrapper">
+                        <label class="modal__label">
+                            <input type="text" class="modal__input" name="your-name" placeholder="Ваше имя">
+                            <span class="modal__label-text">
+                                Ваше имя
+                            </span>
+                        </label>
+                        <button class="modal__input-clear-btn" type="button">
+                            <svg width="14" height="14" aria-hidden="true">
+                                <use xlink:href="#clear"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal__field">
+                    <div class="modal__input-wrapper">
+                        <label class="modal__label">
+                            <input type="tel" class="modal__input" name="your-phone" placeholder="Контактный телефон">
+                            <span class="modal__label-text">
+                                Контактный телефон
+                            </span>
+                        </label>
+                        <button class="modal__input-clear-btn" type="button">
+                            <svg width="14" height="14" aria-hidden="true">
+                                <use xlink:href="#clear"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn modal__submit">
+                Отправить
+            </button>
+            <div class="modal__policy">
+                Нажимая на кнопку, я даю свое согласие на обработку предоставленных персональных данных в соответствии с
+                Федеральным законом от 27.07.2006 № 152-ФЗ
+                «О персональных данных».
+            </div>
+        </form>
+    </div>
+</div>
