@@ -6,6 +6,7 @@ import menu from "./menu";
 import numbers from "./numbers";
 import lazyloading from "./lazyloading";
 import casesDetailSlider from "./casesDetailSlider";
+import showMore from "./showMore";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   numbers();
   lazyloading();
   casesDetailSlider();
+  showMore();
 });
 
 window.addEventListener("load", () => {

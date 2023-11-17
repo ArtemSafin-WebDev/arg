@@ -389,6 +389,16 @@
   }
 }
 
+@include breakpointMF(laptop) {
+  .articles__categories-list-item {
+    .articles__categories:not(.show-all) & {
+      &:not(:nth-child(-n + 6)) {
+        display: none;
+      }
+    }
+  }
+}
+
 .articles__categories-link {
   align-self: flex-start;
   font-size: 1.4rem;
@@ -468,6 +478,26 @@
   &:link,
   &:visited {
     color: white;
+  }
+
+  span {
+    &:nth-child(1) {
+      display: inline;
+    }
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+
+  .articles__categories.show-all & {
+    span {
+      &:nth-child(1) {
+        display: none;
+      }
+      &:nth-child(2) {
+        display: inline;
+      }
+    }
   }
 
   @media (hover: hover) {
