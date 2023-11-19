@@ -10,6 +10,7 @@ import showMore from "./showMore";
 import modals from "./modals";
 import forms from "./forms";
 import clearInput from "./clearInput";
+import articleDetailSlider from "./articleDetailSlider";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   modals();
   forms();
   clearInput();
+  articleDetailSlider();
 });
 
 window.addEventListener("load", () => {
