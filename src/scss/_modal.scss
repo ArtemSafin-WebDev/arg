@@ -24,6 +24,11 @@
     visibility: inherit;
     transition: opacity 0.4s, visibility 0.4s;
   }
+
+  @include breakpoint(tablet) {
+    @include blockWrapper;
+    background-color: #fff;
+  }
 }
 
 .modal__inner {
@@ -38,6 +43,29 @@
   padding-bottom: 4.8rem;
   padding-top: 9.6rem;
   color: #0f1014;
+
+  @include breakpoint(desktop) {
+    max-width: 64.4rem;
+    padding: 0 11.1rem;
+    padding-bottom: 4.8rem;
+    padding-top: 9.6rem;
+  }
+
+  @include breakpoint(laptop) {
+    max-width: 57rem;
+    padding: 0 10rem;
+    padding-bottom: 4.8rem;
+    padding-top: 9.6rem;
+  }
+
+  @include breakpoint(tablet) {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+
+    @include blockContent;
+  }
 }
 
 .modal__close {
@@ -52,7 +80,8 @@
   gap: 0.4rem;
   border-radius: 2.4rem;
   border: 1px solid rgba(15, 16, 20, 0.32);
-
+  top: 2.4rem;
+  right: 2.4rem;
   & > span {
     width: 2rem;
     height: 0.2rem;
@@ -69,6 +98,10 @@
       transform: translateY(-0.6rem) rotate(-45deg);
     }
   }
+
+  @include breakpoint(tablet) {
+    position: static;
+  }
 }
 
 .modal__heading {
@@ -78,17 +111,49 @@
   line-height: 4.8rem;
   margin-bottom: 6.4rem;
   text-align: center;
+
+  @include breakpoint(tablet) {
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4rem;
+    margin-bottom: 3.2rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    margin-bottom: 6rem;
+  }
+
+  @include breakpoint(mobile) {
+    margin-bottom: 3.2rem;
+  }
 }
 
 .modal__form {
   display: flex;
   flex-direction: column;
+
+  .validation-error {
+    padding: 0 1.6rem;
+  }
 }
 
 .modal__fields {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+
+  @include breakpoint(tablet) {
+    display: grid;
+    grid-gap: 2.4rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: flex-start;
+  }
+
+  @include breakpoint(small-tablet) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 1.6rem;
+  }
 }
 
 .modal__input-wrapper {
@@ -111,13 +176,26 @@
   padding: 0 1.6rem;
   border-radius: 3.2rem;
   background: #f5f5f6;
-  padding-bottom: 1.2rem;
+  transition: background-color 0.2s;
+
   height: 6.4rem;
-  padding-top: 3.1rem;
 
   &::placeholder {
     opacity: 0;
   }
+
+  &.not-valid {
+    background-color: rgba(244, 68, 46, 0.08);
+  }
+
+  @include breakpoint(mobile) {
+    height: 4.8rem;
+  }
+}
+
+.modal__input:focus ~ .modal__label-text,
+.modal__input:not(:placeholder-shown) ~ .modal__label-text {
+  transform: translateY(-50%) translateY(-1.7rem) scale(0.8);
 }
 
 .modal__label-text {
@@ -137,11 +215,14 @@
 
 .modal__input-clear-btn {
   position: absolute;
-  top: 50%;
+  top: 3.2rem;
   transform: translateY(-50%);
   right: 1.6rem;
   width: 2.4rem;
   height: 2.4rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
 
   svg {
     display: block;
@@ -150,11 +231,45 @@
     fill: #87878a;
     transition: fill 0.2s;
   }
+
+  @include breakpoint(mobile) {
+    top: 2.4rem;
+  }
+}
+
+.modal__input:not(:placeholder-shown) ~ .modal__input-clear-btn {
+  opacity: 1;
+  visibility: inherit;
+  transition: opacity 0.2s, visibility 0.2s;
 }
 
 .modal__submit {
   width: 100%;
   margin-top: 6.4rem;
+  text-align: center;
+  justify-content: center;
+
+  @include breakpoint(tablet) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.4rem;
+    margin-top: 3.2rem;
+    padding: 1.2rem 2.4rem;
+    width: 28.8rem;
+    max-width: 100%;
+    align-self: center;
+  }
+
+  @include breakpoint(small-tablet) {
+    align-self: stretch;
+    width: 100%;
+    margin-top: 8rem;
+  }
+
+  @include breakpoint(mobile) {
+    margin-top: 3.2rem;
+  }
 }
 
 .modal__policy {
@@ -165,4 +280,46 @@
   color: rgba(15, 16, 20, 0.48);
   margin-top: 1.6rem;
   text-align: center;
+}
+
+.modal__bottom-wrapper {
+  display: contents;
+
+  @include breakpoint(tablet) {
+    margin: 0 auto;
+    max-width: 62rem;
+    display: block;
+    padding-bottom: 4rem;
+  }
+
+  @include breakpoint(small-tablet) {
+    max-width: 34.4rem;
+  }
+}
+
+.modal__top-wrapper {
+  display: contents;
+
+  @include breakpoint(tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    height: 9.6rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
+.modal__logo {
+  display: none;
+
+  @include breakpoint(tablet) {
+    display: block;
+    width: 16.6rem;
+    height: auto;
+  }
+
+  @include breakpoint(mobile) {
+    width: 3.7rem;
+  }
 }

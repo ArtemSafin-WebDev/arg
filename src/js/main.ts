@@ -7,6 +7,9 @@ import numbers from "./numbers";
 import lazyloading from "./lazyloading";
 import casesDetailSlider from "./casesDetailSlider";
 import showMore from "./showMore";
+import modals from "./modals";
+import forms from "./forms";
+import clearInput from "./clearInput";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -16,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
   lazyloading();
   casesDetailSlider();
   showMore();
+  modals();
+  forms();
+  clearInput();
 });
 
 window.addEventListener("load", () => {
