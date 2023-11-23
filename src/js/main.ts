@@ -11,6 +11,7 @@ import modals from "./modals";
 import forms from "./forms";
 import clearInput from "./clearInput";
 import articleDetailSlider from "./articleDetailSlider";
+import messages from "./messages";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   forms();
   clearInput();
   articleDetailSlider();
+  messages();
 });
 
 window.addEventListener("load", () => {
