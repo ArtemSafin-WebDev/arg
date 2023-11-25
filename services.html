@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    {{> meta }}
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      {{> header }}
+      <main class="page-main">
+        <div class="decorative-wrapper">
+          {{> services-catalog }}
+          {{> has-questions }}
+        </div>
+      </main>
+      {{> footer }}
+      {{> modals }}
+      {{> error-success }}
+    </div>
+    <script type="module" src="/src/js/main.ts"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=82fbf3c4-ea86-4f67-aa03-fc5af8fa8c2b&lang=ru_RU"
+      type="text/javascript">
+      </script>
+    <script src="/js/map.js"></script>
+    <script src="/js/backend.js"></script>
+  </body>
+
+</html>
