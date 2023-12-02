@@ -7,6 +7,7 @@ import articleDetail from "./pages-data/article-detail";
 import productsAndServices from "./pages-data/products-and-services";
 import services from "./pages-data/services";
 import products from "./pages-data/products";
+import serviceDetail from "./pages-data/service-detail";
 
 const pagesConfig = {
   ...home,
@@ -18,6 +19,7 @@ const pagesConfig = {
   ...productsAndServices,
   ...services,
   ...products,
+  ...serviceDetail,
 };
 
 export default pagesConfig;
