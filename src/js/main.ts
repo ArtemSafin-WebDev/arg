@@ -12,6 +12,8 @@ import forms from "./forms";
 import clearInput from "./clearInput";
 import articleDetailSlider from "./articleDetailSlider";
 import messages from "./messages";
+import subservicePartners from "./subservicePartners";
+import fancybox from "./fancybox";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -26,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   clearInput();
   articleDetailSlider();
   messages();
+  subservicePartners();
+  fancybox();
 });
 
 window.addEventListener("load", () => {

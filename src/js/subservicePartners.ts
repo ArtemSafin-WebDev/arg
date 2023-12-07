@@ -1,10 +1,11 @@
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/pagination";
 
-export default function cases() {
+export default function subservicePartners() {
   const elements = Array.from(
-    document.querySelectorAll<HTMLElement>(".cases__content")
+    document.querySelectorAll<HTMLElement>(".subservice-detail__partners")
   );
 
   elements.forEach((element) => {
@@ -16,17 +17,19 @@ export default function cases() {
       slidesPerView: "auto",
       speed: 600,
       pagination: {
-        el: element.querySelector<HTMLElement>(".cases__pagination"),
+        el: element.querySelector<HTMLElement>(
+          ".subservice-detail__partners-pagination"
+        ),
         clickable: true,
         dynamicBullets: true,
         dynamicMainBullets: 1,
       },
       navigation: {
         prevEl: element.querySelector<HTMLButtonElement>(
-          ".cases__arrows-btn--prev"
+          ".subservice-detail__partners-arrows-btn--prev"
         ),
         nextEl: element.querySelector<HTMLButtonElement>(
-          ".cases__arrows-btn--next"
+          ".subservice-detail__partners-arrows-btn--next"
         ),
       },
     });
