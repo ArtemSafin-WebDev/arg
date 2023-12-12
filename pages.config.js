@@ -9,6 +9,7 @@ import services from "./pages-data/services";
 import products from "./pages-data/products";
 import serviceDetail from "./pages-data/service-detail";
 import subserviceDetail from "./pages-data/subservice-detail";
+import about from "./pages-data/about";
 
 const pagesConfig = {
   ...home,
@@ -22,6 +23,7 @@ const pagesConfig = {
   ...products,
   ...serviceDetail,
   ...subserviceDetail,
+  ...about,
 };
 
 export default pagesConfig;
