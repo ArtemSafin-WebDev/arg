@@ -63,7 +63,7 @@
     visibility: hidden;
     transition: opacity 0.4s, visibility 0s linear 0.4s;
     overscroll-behavior-y: contain;
-    overflow-y: auto;
+    overflow-x: hidden;
     // background-image: url("../images/menu-blue-blur.svg"),
     //   url("../images/menu-red-blur.svg");
     // background-repeat: no-repeat, no-repeat;
