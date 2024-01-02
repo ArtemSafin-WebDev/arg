@@ -11,6 +11,7 @@ import serviceDetail from "./pages-data/service-detail";
 import subserviceDetail from "./pages-data/subservice-detail";
 import about from "./pages-data/about";
 import docs from "./pages-data/docs";
+import vacancies from "./pages-data/vacancies";
 
 const pagesConfig = {
   ...home,
@@ -26,6 +27,7 @@ const pagesConfig = {
   ...subserviceDetail,
   ...about,
   ...docs,
+  ...vacancies,
 };
 
 export default pagesConfig;

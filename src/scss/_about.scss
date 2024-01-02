@@ -886,3 +886,168 @@
     }
   }
 }
+
+.about__vacancies-accordions {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__vacancies-accordion {
+  display: block;
+  border-top: 1px solid rgba(15, 16, 20, 0.08);
+
+  .btn {
+    @include breakpoint(mobile) {
+      align-self: stretch;
+    }
+  }
+}
+
+.about__vacancies-accordion-btn {
+  min-height: 10rem;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3.2rem;
+  transition: all 0.2s;
+  justify-content: space-between;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.4rem;
+    min-height: 8rem;
+  }
+
+  .js-accordion.active & {
+    color: #d2ab49;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4rem;
+
+    @include breakpoint(mobile) {
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 2.8rem;
+    }
+  }
+}
+
+.about__vacancies-accordion-btn-arrow {
+  flex-shrink: 0;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background-color: rgba(15, 16, 20, 0.322);
+  transition: transform 0.2s;
+  display: grid;
+  place-items: center;
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: white;
+  }
+
+  .js-accordion.active & {
+    transform: rotate(180deg);
+  }
+}
+
+.about__vacancies-accordion-content {
+  height: 0;
+  overflow: hidden;
+}
+
+.about__vacancies-accordion-content-inner {
+  padding-bottom: 6.4rem;
+  padding-top: 3.2rem;
+
+  @include breakpoint(mobile) {
+    padding-bottom: 3.2rem;
+    padding-top: 0;
+  }
+}
+
+.about__vacancies-accordion-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 6.4rem;
+
+  @include breakpoint(mobile) {
+    gap: 3.2rem;
+  }
+}
+
+.about__vacancies-accordion-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  @include breakpoint(mobile) {
+    gap: 1.6rem;
+  }
+}
+
+.about__vacancies-accordion-title {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.8rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.4rem;
+  }
+}
+
+.about__vacancies-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.8rem;
+  max-width: 74rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem;
+    max-width: none;
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+
+  & > li {
+    padding-left: 3.7rem;
+    position: relative;
+
+    @include breakpoint(mobile) {
+      padding-left: 2.4rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      top: 0.75em;
+      transform: translateY(-50%);
+      background-color: #d2ab49;
+      left: 0;
+    }
+  }
+}

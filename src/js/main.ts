@@ -14,6 +14,7 @@ import articleDetailSlider from "./articleDetailSlider";
 import messages from "./messages";
 import subservicePartners from "./subservicePartners";
 import fancybox from "./fancybox";
+import accordions from "./accordions";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   messages();
   subservicePartners();
   fancybox();
+  accordions();
 });
 
 window.addEventListener("load", () => {
