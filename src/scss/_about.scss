@@ -1051,3 +1051,46 @@
     }
   }
 }
+
+.about__agency-partners-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 12.8rem;
+  margin-bottom: 12.8rem;
+
+  @include breakpoint(mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 6.4rem;
+    margin-bottom: 6.4rem;
+  }
+}
+
+.about__agency-partners-list-item {
+  display: block;
+  border: 1px solid #ececec;
+  margin-top: -1px;
+  margin-left: -1px;
+}
+.about__agency-partners-card {
+  position: relative;
+  display: block;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 87.5%;
+
+    @include breakpoint(mobile) {
+      padding-bottom: 100%;
+    }
+  }
+}
+
+.about__agency-partners-card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
