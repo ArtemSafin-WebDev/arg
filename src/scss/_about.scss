@@ -786,6 +786,31 @@
   flex-direction: column;
 }
 
+.about-event__list-item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3.2rem 0;
+  gap: 0.4rem;
+  border-bottom: 1px solid rgba(15, 16, 20, 0.08);
+}
+.about-event__card-date{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+
+  color: rgba(15, 16, 20, 0.48);
+}
+.about-event__card-title{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+
+  color: #0F1014;
+}
+
 .about-docs__card {
   display: flex;
   flex-direction: column;
