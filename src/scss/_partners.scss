@@ -315,3 +315,32 @@
     }
   }
 }
+
+.partners-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+
+  @include breakpoint(mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 6.4rem;
+    margin-bottom: 6.4rem;
+  }
+}
+.partners-list-item {
+  display: block;
+  background: #fff;
+  border-radius: 3.2rem;
+  margin: -1px 3.2rem 3.2rem -1px;
+
+  &:nth-child(3) {
+    margin-right: 0;
+  }
+}
+
+.partners-list-item .about__agency-partners-card {
+  &::before {
+    padding-bottom: 60.5%;
+  }
+}
