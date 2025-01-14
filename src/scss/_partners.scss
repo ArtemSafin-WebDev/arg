@@ -318,7 +318,7 @@
 
 .partners-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   margin-top: 7rem;
   margin-bottom: 3rem;
 
@@ -334,9 +334,9 @@
   border-radius: 3.2rem;
   margin: -1px 3.2rem 3.2rem -1px;
 
-  &:nth-child(3) {
+  /*&:nth-child(6n+6) {
     margin-right: 0;
-  }
+  }*/
 }
 
 .partners-list-item .about__agency-partners-card {

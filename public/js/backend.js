@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.remove("modal-open");
             form.closest(".js-modal")?.classList.remove("active");
             success?.classList.add("active");
+            ym(50711422,'reachGoal','sendplus');
+
           })
           .catch((err) => {
             console.error(err);

@@ -225,6 +225,30 @@
       }
     }
   }
+
+  ol{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.2rem;
+    gap: 1.6rem;
+    &:first-child {
+      margin-top: 0;
+    }
+
+    & > li {
+      padding-left: 3.7rem;
+      position: relative;
+
+      @include breakpoint(mobile) {
+        padding-left: 2.4rem;
+      }
+      &::before {
+        position: absolute;
+        color: #d2ab49;
+        left: 0;
+      }
+    }
+  }
 }
 
 .article-detail__bottom-wrapper {
